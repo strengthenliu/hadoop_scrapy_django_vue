@@ -1,0 +1,5 @@
+20200720
+1、本地仓库和github里远程仓库配置成功
+2、新建django项目
+3、新建scrapy_redis项目
+4、将vue项目，scrapy_redis，django项目集成
