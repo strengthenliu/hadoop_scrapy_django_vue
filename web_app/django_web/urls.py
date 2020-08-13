@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from ..datashow.views import test, document, chart, cloud
+from web_app.datashow.views import test, document, chart, cloud
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
