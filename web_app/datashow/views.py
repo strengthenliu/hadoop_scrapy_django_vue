@@ -8,10 +8,10 @@ connect("zufang_fs", host='127.0.0.1')
 
 
 def document(request):
-    limit=15
+    limit = 15
     zufang_info = ItemInfo.objects
-    pageinator=Paginator(zufang_info, limit)
-    page=request.GET.get('page',1)
+    pageinator = Paginator(zufang_info, limit)
+    page = request.GET.get('page', 1)
     loaded = pageinator.page(page)
     cities=zufang_info.distinct("city")
     citycount=len(cities)
@@ -36,6 +36,7 @@ def binzhuantu():
         item = [city.encode('raw_unicode_escape'), ocu]
         citys.append(item)
     return citys
+
 
 def chart(request):
     ##饼状图
@@ -70,10 +71,11 @@ def cloud(request):
     res = zufang_info.distinct('community')
     length=len(res)
     context={
-        'count':length,
-        'wenzi':res
+        'count': length,
+        'wenzi': res
     }
     return render(request, 'test.html',context)
+
 
 def test(request):
     zufang_info = ItemInfo.objects
