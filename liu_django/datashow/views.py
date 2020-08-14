@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from liu_django.datashow.models import ZufangInfo
+from django.http import HttpResponse
+from .models import ZufangInfo
 # Create your views here.
 
 
+# render(request, 返回的页面，字典)
+# HttpResponse('字符串')
+# JsonResponse(字典)，专门生成json编码的响应，发给前端ajax
 def test(request):
     zufang_info = ZufangInfo.objects.all()
     rr = []
@@ -17,7 +21,4 @@ def test(request):
         'count': length,
         'wenzi':  rr
     }
-    # render(request, 返回的页面，字典)
-    # Httpresponse('字符串')
-    # JsonResponse(字典)，专门生成json编码的响应，发给前端ajax
     return render(request, 'test.html', context)
